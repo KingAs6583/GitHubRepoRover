@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "608497485740",
+    "project_id": "github-repo-rover",
+    "storage_bucket": "github-repo-rover.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608497485740:android:095b234376dc22ef2b9c09",
+        "android_client_info": {
+          "package_name": "com.example.githubreporover"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608497485740-ai9r9ec6io7nm0096mmq4g1fgcdk4eci.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.githubreporover",
+            "certificate_hash": "3b4be0748bfd4d1cac30a8ff2152afee74e6164e"
+          }
+        },
+        {
+          "client_id": "608497485740-n9chc797u9mf4gi1ei2p5fg089ijfs61.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.githubreporover",
+            "certificate_hash": "3069ccd3bfbb84349c5a2d65e608e4899312a883"
+          }
+        },
+        {
+          "client_id": "608497485740-ltb4p3rvctuq6ijdg9fosg1u7o5h26h5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAykbpagsWhRbqIVNMSqBYnwwEHSUaEqp0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608497485740-ltb4p3rvctuq6ijdg9fosg1u7o5h26h5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

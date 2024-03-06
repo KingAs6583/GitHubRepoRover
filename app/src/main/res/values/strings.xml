@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">GitHub Repo Rover</string>
+    <string name="login">Login</string>
+    <!-- app drawer side menu -->
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="default_web_client_id">608497485740-ltb4p3rvctuq6ijdg9fosg1u7o5h26h5.apps.googleusercontent.com</string>
+    <string name="user_name">Name: %s</string>
+    <string name="email">Email: %s</string>
+    <string name="github_id">GitHub Id: %s</string>
+    <string name="login_warn">Note Only Public Info of git id will be shown</string>
+    <string name="login_id_hint">GitHub User ID</string>
+    <!-- Details   -->
+    <string name="repo_owner">Owner: %s</string>
+    <string name="repo_desc">%s</string>
+    <string name="repo_lang">Language: %s</string>
+    <string name="repo_license">License: %s</string>
+    <string name="repo_visibility">Visibility: %s</string>
+    <string name="repo_clone_url">Clone: %s</string>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.GitHubRepoRover.TextInputLayout.OutlinedBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeErrorColor">@color/red_700</item>
+        <item name="errorIconTint">@color/red_700</item>
+        <item name="errorTextColor">@color/red_700</item>
+        <item name="errorIconDrawable">@drawable/ic_error</item>
+        <item name="placeholderTextColor">@color/black</item>
+        <item name="helperTextTextAppearance">@style/TextAppearance.MaterialComponents.Subtitle1</item>
+    </style>
+    <style name="Theme.GitHubRepoRover.NoActionBar" parent="Theme.Material3.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.GitHubRepoRover.linearlayout" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+
+</resources>

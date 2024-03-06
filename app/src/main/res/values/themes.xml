@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.GitHubRepoRover" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.GitHubRepoRover" parent="Base.Theme.GitHubRepoRover">
+<!--        <item name="android:fontFamily">@font/times_new_roman_family</item>-->
+    </style>
+
+</resources>
