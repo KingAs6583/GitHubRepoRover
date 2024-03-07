@@ -17,4 +17,8 @@
     <string name="repo_license">License: %s</string>
     <string name="repo_visibility">Visibility: %s</string>
     <string name="repo_clone_url">Clone: %s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="view_in_web">View In Web</string>
+    <string name="view_in_vs_code">View in VS Code</string>
 </resources>

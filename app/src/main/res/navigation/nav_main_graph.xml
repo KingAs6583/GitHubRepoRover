@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_homeFragment_to_repoDetailsFragment"
             app:destination="@id/repoDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_self"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/repoDetailsFragment"
@@ -24,5 +27,24 @@
         <argument
             android:name="Repo"
             app:argType="com.example.githubreporover.data.ParcelizeRepo" />
+        <action
+            android:id="@+id/action_repoDetailsFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.example.githubreporover.WebViewFragment"
+        android:label="{header}"
+        tools:layout="@layout/fragment_web_view">
+        <action
+            android:id="@+id/action_webViewFragment_to_repoDetailsFragment"
+            app:destination="@id/repoDetailsFragment" />
+        <argument
+            android:name="urlLink"
+            app:argType="string" />
+        <argument
+            android:name="header"
+            android:defaultValue="Web View"
+            app:argType="string" />
     </fragment>
 </navigation>

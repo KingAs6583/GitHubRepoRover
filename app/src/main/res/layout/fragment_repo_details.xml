@@ -78,5 +78,25 @@
             android:layout_marginTop="8dp"
             android:text="@string/repo_clone_url"
             android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/view_web"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:text="@string/view_in_web"
+            android:textColor="@color/indigo_800"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/view_vscode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:text="@string/view_in_vs_code"
+            android:textColor="@color/indigo_800"
+            android:textSize="20sp" />
     </LinearLayout>
 </ScrollView>

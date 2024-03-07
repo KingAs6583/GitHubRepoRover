@@ -185,6 +185,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.logout -> {
                logout()
             }
+            R.id.clear_web_cache -> {
+                this.cacheDir.deleteRecursively()
+            }
         }
         //closing the drawer
         drawerLayout.closeDrawer(GravityCompat.START)

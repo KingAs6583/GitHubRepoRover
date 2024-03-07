@@ -10,6 +10,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuHost
@@ -62,6 +63,29 @@ class HomeFragment : Fragment(), MenuProvider, SearchView.OnQueryTextListener {
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
         isNetworkConnected = dbViewModel.isNetworkConnected(requireContext())
 
+
+        setUpAdapters()
+
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            refreshData()
+        }
+
+    }
+
+    private fun handleBackButtonOnSearch(){
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                //handling goBack stack off web view
+                override fun handleOnBackPressed() {
+                    if (isEnabled) {
+                        isEnabled = false
+                        setUpAdapters()
+                    }
+                }
+            })
+    }
+
+    private fun setUpAdapters(){
         try {
             if(isNetworkConnected) {
                 setRepoAdapter(true)
@@ -75,10 +99,6 @@ class HomeFragment : Fragment(), MenuProvider, SearchView.OnQueryTextListener {
             }
         } catch (e: Exception) {
             Log.e("crash", "crash")
-        }
-
-        binding.swipeRefreshLayout.setOnRefreshListener {
-            refreshData()
         }
 
     }
@@ -174,6 +194,7 @@ class HomeFragment : Fragment(), MenuProvider, SearchView.OnQueryTextListener {
                 binding.homeLoading.visibility = View.GONE
             }
         }
+        handleBackButtonOnSearch()
         return true
     }
 
