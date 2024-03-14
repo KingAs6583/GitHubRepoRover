@@ -16,6 +16,8 @@ data class RepoEntity(
     val license: String?,
     val language: String?,
     val visibility: String,
+    @ColumnInfo(name = "is_fav_repo", index = true, defaultValue = "false")
+    val isFavRepo : Boolean = false
 
 ){
     fun getRepo(): Repo{

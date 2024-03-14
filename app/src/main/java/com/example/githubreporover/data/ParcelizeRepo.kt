@@ -16,7 +16,7 @@ data class ParcelizeRepo(
     val license: @RawValue License?,
     val language: String?,
     val visibility: String
-): Parcelable{
+) : Parcelable {
     fun getRepo(): Repo {
         return Repo(
             id = id,
@@ -30,6 +30,20 @@ data class ParcelizeRepo(
             visibility = visibility
         )
     }
+
+    fun getRepoEntity(): RepoEntity {
+        return RepoEntity(
+            id = id,
+            name = name,
+            ownerName = owner?.login,
+            htmlUrl = htmlUrl,
+            description = description,
+            cloneUrl = cloneUrl,
+            license = license?.name,
+            language = language,
+            visibility = visibility,
+        )
+    }
 }
 
 @Parcelize
@@ -39,5 +53,5 @@ data class ParcelizeUserDetails(
     val avatarUrl: String?,
     val name: String?,
     val bio: String?
-): Parcelable
+) : Parcelable
 

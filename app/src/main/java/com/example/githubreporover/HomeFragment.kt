@@ -63,8 +63,19 @@ class HomeFragment : Fragment(), MenuProvider, SearchView.OnQueryTextListener {
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
         isNetworkConnected = dbViewModel.isNetworkConnected(requireContext())
 
-
+        if(viewModel.searchText == null)
         setUpAdapters()
+        else{
+            setRepoAdapter(false)
+            binding.homeLoading.visibility = View.VISIBLE
+            viewModel.publicRepo.observe(this.viewLifecycleOwner) { list ->
+                list.let {
+                    repoAdapter.submitList(it.items)
+                    binding.homeLoading.visibility = View.GONE
+                }
+            }
+            handleBackButtonOnSearch()
+        }
 
         binding.swipeRefreshLayout.setOnRefreshListener {
             refreshData()
@@ -80,6 +91,7 @@ class HomeFragment : Fragment(), MenuProvider, SearchView.OnQueryTextListener {
                     if (isEnabled) {
                         isEnabled = false
                         setUpAdapters()
+                        viewModel.searchText = null
                     }
                 }
             })
@@ -192,6 +204,7 @@ class HomeFragment : Fragment(), MenuProvider, SearchView.OnQueryTextListener {
             list.let {
                 repoAdapter.submitList(it.items)
                 binding.homeLoading.visibility = View.GONE
+                viewModel.searchText = query
             }
         }
         handleBackButtonOnSearch()

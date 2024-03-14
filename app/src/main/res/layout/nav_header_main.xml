@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -36,7 +35,6 @@
             android:paddingTop="8dp"
             android:text="@string/github_id"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <TextView
@@ -46,7 +44,6 @@
             android:paddingTop="8dp"
             android:text="@string/user_name"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/black"
             android:textStyle="bold" />
 
         <TextView
@@ -55,7 +52,6 @@
             android:layout_height="wrap_content"
             android:text="@string/email"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/black"
             android:textStyle="bold" />
 
 

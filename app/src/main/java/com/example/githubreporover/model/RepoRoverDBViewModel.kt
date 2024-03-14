@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.githubreporover.data.Repo
 import com.example.githubreporover.data.RepoEntity
 import com.example.githubreporover.database.RepoRoverDao
 import kotlinx.coroutines.launch
@@ -24,15 +23,32 @@ class RepoRoverDBViewModel(private val repoRoverDao: RepoRoverDao) : ViewModel()
         }
     }
 
-    private fun deleteAll(){
+    private fun updateRepo(repoEntity: RepoEntity){
         viewModelScope.launch {
-            repoRoverDao.deleteAllCacheRepos()
+            repoRoverDao.update(repoEntity)
+        }
+    }
+
+
+    private fun deleteNonFavRepoAll(){
+        viewModelScope.launch {
+            repoRoverDao.deleteNonFavRepo()
         }
     }
 
     private fun getAllRepo() : LiveData<List<RepoEntity>>{
         return repoRoverDao.getAllCacheRepos().asLiveData()
 
+    }
+
+    private  fun deleteFavRepo(repoEntity: RepoEntity){
+        viewModelScope.launch {
+            repoRoverDao.delete(repoEntity)
+        }
+    }
+
+    private fun getFavRepo(): LiveData<List<RepoEntity>>{
+        return repoRoverDao.getAllFavRepo().asLiveData()
     }
 
     fun isNetworkConnected(context: Context): Boolean {
@@ -45,12 +61,28 @@ class RepoRoverDBViewModel(private val repoRoverDao: RepoRoverDao) : ViewModel()
         insertRepo(repoEntity)
     }
 
+    fun addFavRepo(repoEntity: RepoEntity){
+        insertRepo(repoEntity.copy(isFavRepo = true))
+    }
+
+    fun removeFavRepo(repoEntity: RepoEntity){
+        deleteFavRepo(repoEntity)
+    }
+
     fun deleteAllCacheRepo(){
-        deleteAll()
+        deleteNonFavRepoAll()
     }
 
     fun getAllCacheRepo(): LiveData<List<RepoEntity>>{
         return getAllRepo()
+    }
+
+    fun searchFavRepoData(searchQuery: String): LiveData<List<RepoEntity>> {
+        return repoRoverDao.searchFavRepo(searchQuery).asLiveData()
+    }
+
+    fun getAllFavRepo(): LiveData<List<RepoEntity>>{
+        return  getFavRepo()
     }
 
 }

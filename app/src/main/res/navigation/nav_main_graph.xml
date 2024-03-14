@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_homeFragment_self"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favRepoFragment"
+            app:destination="@id/favRepoFragment" />
     </fragment>
     <fragment
         android:id="@+id/repoDetailsFragment"
@@ -30,6 +33,10 @@
         <action
             android:id="@+id/action_repoDetailsFragment_to_webViewFragment"
             app:destination="@id/webViewFragment" />
+        <argument
+            android:name="isFavRepo"
+            app:argType="boolean"
+            android:defaultValue="false" />
     </fragment>
     <fragment
         android:id="@+id/webViewFragment"
@@ -46,5 +53,17 @@
             android:name="header"
             android:defaultValue="Web View"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/favRepoFragment"
+        android:name="com.example.githubreporover.FavRepoFragment"
+        android:label="Favourite"
+        tools:layout="@layout/fragment_fav_repo">
+        <action
+            android:id="@+id/action_favRepoFragment_to_repoDetailsFragment"
+            app:destination="@id/repoDetailsFragment" />
+        <action
+            android:id="@+id/action_favRepoFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

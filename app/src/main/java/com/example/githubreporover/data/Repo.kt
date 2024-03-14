@@ -15,7 +15,7 @@ data class Repo(
     val cloneUrl: String,
     val license: License?,
     val language: String?,
-    var visibility: String,
+    var visibility: String
 ){
     fun getParcelizeRepo(): ParcelizeRepo{
         return ParcelizeRepo(

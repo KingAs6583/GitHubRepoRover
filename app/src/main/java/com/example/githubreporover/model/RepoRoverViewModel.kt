@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.githubreporover.data.PublicRepo
 import com.example.githubreporover.data.Repo
-import com.example.githubreporover.data.UserDetails
 import com.example.githubreporover.network.GitHubAPI
 import kotlinx.coroutines.launch
 
@@ -28,6 +27,8 @@ class RepoRoverViewModel : ViewModel() {
 
     private val _starsCount = MutableLiveData<Int>()
     val starsCount = _starsCount
+
+    var searchText : String? =  null
 
     fun getReposByUserName(userName: String) {
         viewModelScope.launch {

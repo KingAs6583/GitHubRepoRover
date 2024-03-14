@@ -9,6 +9,12 @@
             android:icon="@drawable/baseline_home_24"
             android:title="Home" />
         <item
+            android:id="@+id/nav_fav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/baseline_favorite_24"
+            android:title="Favorite" />
+        <item
             android:id="@+id/nav_git_id"
             android:icon="@drawable/ic_baseline_person_24"
             android:title="GitHub ID" />

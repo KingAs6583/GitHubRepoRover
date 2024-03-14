@@ -85,6 +85,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:text="0"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView5"
                     app:layout_constraintEnd_toStartOf="@+id/imageView5"
                     app:layout_constraintTop_toTopOf="@+id/imageView5" />

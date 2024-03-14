@@ -188,6 +188,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.clear_web_cache -> {
                 this.cacheDir.deleteRecursively()
             }
+            R.id.nav_fav ->{
+                val action = HomeFragmentDirections.actionHomeFragmentToFavRepoFragment()
+                navController.navigate(action)
+            }
         }
         //closing the drawer
         drawerLayout.closeDrawer(GravityCompat.START)
